@@ -28,15 +28,7 @@ const Classes = () => {
                                
                                     <figure><img className="w-[300px] h-[180px] pl-4" src={classList.classImage} alt="Movie" /></figure>
                                </div>
-                                    <div className="card-body text-sm">
-                                        <h2 className="card-title text-base text-amber-600">Ins. {classList.instructorName}</h2>
-                                        <p>Total Students: {classList.numStudents}</p>
-                                        <p>Available Seats: {classList.availableSeats}</p>
-                                        <p>Price: ${classList.price}.00</p>
-                                        <div className="card-actions justify-end">
-                                            <button className="btn  bg-[#1ed8f0] hover:bg-[#1bc2d8]">Select</button>
-                                        </div>
-                                    </div>
+                                
                                 </div>
                             </div>)
                     }
