@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
 import SocialLink from "../../Shared/SocialLink";
-import loginImg from "../../assets/loggedin.jpg"
+import signUpImg from "../../assets/Mobile login.gif"
 import { useForm } from "react-hook-form";
 const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => { console.log(data); }
     return (
-        <div className="hero min-h-screen" style={{ backgroundImage: `url(${loginImg})` }}>
-            <div className="hero-overlay bg-opacity-60"></div>
-            <div className="hero-content text-center text-neutral-content">
-                <div className="max-w-xl">
+     
+               <div className="my-10 mx-20">
+                 <div className="grid grid-cols-2 gap-10">
                     <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
                         <div className="card-body">
                             <h1 className="text-[#1597a8] text-3xl font-bold">Sign Up now!!</h1>
@@ -86,9 +85,10 @@ const Register = () => {
                                 className="text-[#0f6c78] font-semibold" to='/login'>Login</Link></p>
                         </div>
                     </div>
+                    <img src={signUpImg} alt="" />
                 </div>
-            </div>
-        </div>
+               </div>
+           
     );
 };
 

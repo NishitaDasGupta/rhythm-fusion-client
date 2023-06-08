@@ -45,7 +45,7 @@ const PopularClasses = () => {
                             <div className="card card-compact bg-base-100 hover:bg-[#a5eff9] shadow-xl">
                                 <figure><img src={classList.classImage} className="h-[190px] mt-5" alt="Class" /></figure>
                                 <div className="card-body">
-                                    <h2 className="card-title">{classList.className} Class</h2>
+                                    <h2 className="card-title">{classList.classNam} Class</h2>
                                     <div className="flex">
                                         <p className="text-[#0f6c78]">Mon-Fri   {classList.time}</p>
                                         <Rating

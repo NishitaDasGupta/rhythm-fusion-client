@@ -8,7 +8,7 @@ const Navbar = () => {
         <li><Link to='/classes'>Classes</Link></li>
     </>
     return (
-        <div className="navbar ">
+        <div className="navbar">
             <div className="navbar-start z-30">
                 <div className="dropdown ">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

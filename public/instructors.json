@@ -1,7 +1,7 @@
 [
     {
         "instructorId": 10001,
-        "name": "John Smith",
+        "name": "Mr John Smith",
         "instructorImage": "https://img.freepik.com/free-photo/close-up-young-successful-man-smiling-camera-standing-casual-outfit-against-blue-background_1258-66609.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=sph",
         "email": "js@gmail.com",
         "student": 18,
@@ -29,7 +29,7 @@
     },
     {
         "instructorId": 10002,
-        "name": "Emily Johnson",
+        "name": "Mr Emily Johnson",
         "instructorImage": "https://img.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=sph",
         "email": "ej@gmail.com",
         "student": 25,
@@ -57,7 +57,7 @@
     },
     {
         "instructorId": 10003,
-        "name": "David Lee",
+        "name": "Mr David Lee",
         "instructorImage": "https://img.freepik.com/free-photo/successful-handsome-business-man-office_1303-20918.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=sph",
         "email": "dl@gmail.com",
         "student": 5,
@@ -81,7 +81,7 @@
     },
     {
         "instructorId": 10004,
-        "name": "Sophia Chen",
+        "name": "Mrs Sophia Chen",
         "instructorImage": "https://img.freepik.com/free-photo/businesswoman-executive-professional-success-concept_53876-137644.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=sph",
         "email": "sc@gmail.com",
         "student": 20,
@@ -109,7 +109,7 @@
     },
     {
         "instructorId": 10005,
-        "name": "Michael Rodriguez",
+        "name": "Mr Michael Rodriguez",
         "instructorImage": "https://img.freepik.com/free-photo/handsome-young-man-with-arms-crossed-white-background_23-2148222620.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=sph",
         "email": "mr@gmail.com",
         "student": 13,
@@ -137,7 +137,7 @@
     },
     {
         "instructorId": 10006,
-        "name": "Olivia Martin",
+        "name": "Miss Olivia Martin",
         "instructorImage": "https://img.freepik.com/free-photo/brunette-business-woman-with-wavy-long-hair-blue-eyes-stands-holding-notebook-hands_197531-343.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=sph",
         "email": "om@gmail.com",
         "student": 10,
