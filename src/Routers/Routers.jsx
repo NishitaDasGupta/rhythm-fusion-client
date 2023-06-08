@@ -7,6 +7,7 @@ import Instructors from "../Pages/Home/Instructors/Instructors";
 import Classes from "../Pages/Home/Classes/Classes";
 import Login from "../Pages/SigninUp/Login";
 import Register from "../Pages/SigninUp/Register";
+import Errorpage from "../Layout/Errorpage";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -37,5 +38,9 @@ const router = createBrowserRouter([
 
         ]
     },
+    {
+        path: "*",
+        element: <Errorpage></Errorpage>
+    }
 ]);
 export default router;

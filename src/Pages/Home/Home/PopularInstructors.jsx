@@ -1,16 +1,7 @@
-import { useEffect, useState } from "react";
-
+import useInstructors from "../../../hook/useInstructors";
 
 const PopularInstructors = () => {
-    const [instructors, setInstructors] = useState([]);
-    useEffect(() => {
-        fetch('instructors.json')
-            .then(res => res.json())
-            .then(data => {
-                setInstructors(data);
-            })
-    }, [])
-
+    const [instructors] = useInstructors();
     // sorted by big to small 
     instructors.sort(function (a, b) {
         return b.student - a.student;
@@ -18,9 +9,9 @@ const PopularInstructors = () => {
 
     return (
         <div className="my-48">
-            <h1 className="text-5xl font-bold my-5">Our <span className="text-[#18adc0]">Instructors</span></h1>
+            <h1 className="text-5xl font-bold my-5">Our Popular <span className="text-[#18adc0]">Instructors</span></h1>
             <p className="lg:w-3/5 mb-5">The school offers a comprehensive curriculum that encompasses a wide range of musical instruments, including drums, percussion, keyboards, guitars, and bass. </p>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-14">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-7 mt-14">
                 {
                     instructors.map(teacher =>
                         <div key={teacher.instructorId}>
@@ -31,7 +22,7 @@ const PopularInstructors = () => {
                                             <img src={teacher.instructorImage} />
                                         </div>
                                     </div>
-                                        <h2 className="card-title">{teacher.name}  </h2></div>
+                                        <h2 className="card-title ">{teacher.name}  </h2></div>
 
                                     <p>
                                         Classes: {
@@ -42,17 +33,17 @@ const PopularInstructors = () => {
                                     </p>
                                     <p>Students: <small>{teacher.student}</small></p>
                                     <p className="text-center font-bold text-[#1597a8]">Gallery</p>
-                                   
+
                                     {
-                                            teacher.classeImage.map(classL =>
-                                                <div className="w-1/2" key={classL.cImgId}><figure className="w-80 h-[213px]"><img src={classL.cImg} alt="Shoes" /></figure> 
-                                                </div>
-                                            )
-                                        }
+                                        teacher.classeImage.map(classL =>
+                                            <div className="w-1/2" key={classL.cImgId}><figure className="w-80 h-[213px]"><img src={classL.cImg} alt="Shoes" /></figure>
+                                            </div>
+                                        )
+                                    }
 
 
 
-                                  
+
                                 </div>
 
 

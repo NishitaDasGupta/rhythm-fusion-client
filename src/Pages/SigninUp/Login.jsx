@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
 import SocialLink from "../../Shared/SocialLink";
-import loginImg from "../../assets/loggedin.jpg"
+
 import { useForm } from "react-hook-form";
+// import { AiOutlineEyeInvisible } from 'react-icons/ai';
+// import { AiOutlineEye } from 'react-icons/ai';
+import loglog from "../../assets/Login.gif"
+
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => { console.log(data); }
     return (
-        <div className="hero min-h-screen" style={{ backgroundImage: `url(${loginImg})` }}>
-            <div className="hero-overlay bg-opacity-60"></div>
-            <div className="hero-content text-center text-neutral-content">
-                <div className="max-w-md">
+    
+               <div className="my-8 mx-20">
+                 <div className="grid grid-cols-2 gap-8">
+                    <img src={loglog} alt="" />
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
                             <h1 className="text-[#1597a8] text-3xl font-bold">Login now!!</h1>
@@ -41,8 +45,8 @@ const Login = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+               </div>
+         
     );
 };
 

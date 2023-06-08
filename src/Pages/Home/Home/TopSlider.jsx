@@ -2,19 +2,23 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import { Autoplay, Pagination, Navigation } from "swiper";
-import { useEffect, useState } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 import { Link } from "react-router-dom";
+import useSlider from "../../../hook/useSlider";
 const TopSlider = () => {
-    const [sliderData, setSliderData] = useState([]);
-    useEffect(() => {
-        fetch('sliderdata.json')
-            .then(res => res.json())
-            .then(data => setSliderData(data))
-    }, [])
+   const [sliderData] = useSlider();
+   useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, [])
     return (
-        <div>
+        <div data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="300"
+        data-aos-offset="0">
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}

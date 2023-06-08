@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/music.png"
-
+import { BsTelephone } from 'react-icons/bs';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { MdOutlineMail } from 'react-icons/md';
 const Footer = () => {
     return (
         <div>
@@ -9,6 +11,9 @@ const Footer = () => {
                     <Link to='/'>  <img className="w-9" src={logo} alt="" />
                         <h1 className="text-xl font-bold"><span className="text-3xl">R</span>hythm Fusion Ltd.</h1></Link>
                     <p className="text-xs">Providing reliable tech since 1992</p>
+                    <p className="flex justify-center items-center space-x-3"><BsTelephone/> +440 8758 5858</p>
+                    <p className="flex justify-center items-center"><MdOutlineMail/>rhythmfusion@gmail.com</p>
+                    <p className="flex justify-center items-center"><HiOutlineLocationMarker/>Abu takah, USA</p>
                 </div>
                 <div className="text-xs">
                     <span className="footer-title">Services</span>
@@ -29,6 +34,7 @@ const Footer = () => {
                     <a className="link link-hover">Privacy policy</a>
                     <a className="link link-hover">Cookie policy</a>
                 </div>
+                
             </footer>
             <footer className="footer footer-center p-4 bg-base-300 text-[10px]">
                 <div>

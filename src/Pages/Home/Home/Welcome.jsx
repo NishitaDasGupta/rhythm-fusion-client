@@ -2,7 +2,15 @@ import { SiSemanticscholar } from 'react-icons/si';
 import { MdOutlineSchool } from 'react-icons/md';
 import { BsBarChart } from 'react-icons/bs';
 import { GiTeacher } from 'react-icons/gi';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
 const Welcome = () => {
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+      }, [])
     return (
         <div className="my-48">
             <div>
@@ -11,7 +19,9 @@ const Welcome = () => {
                 </p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-                <div className="card w-64 bg-base-100 shadow-xl">
+            <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" className="card w-64 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
 
                         <div className='text-5xl text-[#1ed8f0]'>
@@ -23,7 +33,10 @@ const Welcome = () => {
                         <p>Exceptional faculty comprising world-class musicians.</p>
                     </div>
                 </div>
-                <div className="card w-64 bg-base-100 shadow-xl">
+                
+                <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000"   className="card w-64 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
 
                         <div className='text-5xl text-yellow-600'>
@@ -34,7 +47,9 @@ const Welcome = () => {
                         <p>Organize it conducted by renowned guest artists.</p>
                     </div>
                 </div>
-                <div className="card w-64 bg-base-100 shadow-xl">
+                <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" className="card w-64 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
                         <div className='text-5xl text-[#1ed8f0]'> <BsBarChart /></div>
 
@@ -44,7 +59,9 @@ const Welcome = () => {
                         <p>Offers workshops and seminars on music industry trends.</p>
                     </div>
                 </div>
-                <div className="card w-64 bg-base-100 shadow-xl">
+                <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" className="card w-64 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
                         <div className='text-5xl text-yellow-600'>   <GiTeacher /></div>
 
