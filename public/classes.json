@@ -1,0 +1,112 @@
+[
+    {
+        "classId": 20001,
+        "className": "Guitar",
+        "classImage": "https://img.freepik.com/free-photo/mother-girl-playing-instrument_23-2148542823.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=ais",
+        "time": "10am - 11am",
+        "instructorName": "John Smith",
+        "numStudents": 10,
+        "ratings": 4.2,
+        "availableSeats": 15,
+        "price": 50
+    },
+    {
+        "classId": 20002,
+        "className": "Bass Guitar",
+        "classImage": "https://img.freepik.com/free-photo/guitar-teacher-showing-child-how-play-home_23-2148524642.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=ais",
+        "time": "11am - 12pm",
+        "instructorName": "John Smith",
+        "numStudents": 8,
+        "ratings": 3.2,
+        "availableSeats": 12,
+        "price": 55
+    },
+    {
+        "classId": 20003,
+        "className": "Violin",
+        "classImage": "https://img.freepik.com/free-photo/this-is-right-position-happy-music-teacher-helping-motivated-preteen-girl-student-play-violin_662251-1483.jpg?w=740&t=st=1686157504~exp=1686158104~hmac=84d6fbc51e8c47e4a53c8112479e9abd2d4316568c25334563fa0e2475de0268",
+        "time": "10am - 11am",
+        "instructorName": "David Lee",
+        "numStudents": 5,
+        "ratings": 4.7,
+        "availableSeats": 10,
+        "price": 60
+    },
+    {
+        "classId": 20004,
+        "className": "Drums",
+        "classImage": "https://img.freepik.com/free-photo/teen-music-band-performing-recording-studio_155003-15607.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=sph",
+        "time": "9am - 11am",
+        "instructorName": "Sophia Chen",
+        "numStudents": 12,
+        "ratings": 5,
+        "availableSeats": 15,
+        "price": 65
+    },
+    {
+        "classId": 20005,
+        "className": "Harmonica",
+        "classImage": "https://t4.ftcdn.net/jpg/03/23/52/33/240_F_323523390_1lE4lIaeXDBDs19SK1aW6sjfcMFixhbo.jpg",
+        "time": "9.30am - 10.30am",
+        "instructorName": "Sophia Chen",
+        "numStudents": 8,
+        "ratings": 3.8,
+        "availableSeats": 0,
+        "price": 55
+    },
+    {
+        "classId": 20006,
+        "className": "Saxophone",
+        "classImage": "https://img.freepik.com/free-photo/full-shot-friends-making-music-together_23-2149223703.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.1.1614607020.1683036746&semt=sph",
+        "time": "11am - 1pm",
+        "instructorName": "Michael Rodriguez",
+        "numStudents": 7,
+        "ratings": 4.8,
+        "availableSeats": 12,
+        "price": 60
+    },
+    {
+        "classId": 20007,
+        "className": "Electric Keyboard",
+        "classImage": "https://img.freepik.com/free-photo/father-daughter-playing-piano_23-2148101829.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=ais",
+        "time": "3pm - 4pm",
+        "instructorName": "Michael Rodriguez",
+        "numStudents": 6,
+        "ratings": 3.6,
+        "availableSeats": 8,
+        "price": 50
+    },
+    {
+        "classId": 20008,
+        "className": "Ukulele",
+        "classImage": "https://img.freepik.com/free-photo/tutor-boy-learning-accoustic-guitar-ukulele_23-2148573997.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=sph",
+        "time": "10am - 11am",
+        "instructorName": "Olivia Martin",
+        "numStudents": 10,
+        "ratings": 3.2,
+        "availableSeats": 15,
+        "price": 55
+    },
+    {
+        "classId": 20009,
+        "className": "Piano",
+        "classImage": "https://img.freepik.com/free-photo/learning-play-new-song-piano-artistic-young-boy-talking-with-his-music-teacher-during-private-lesson_662251-1522.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=sph",
+        "time": "3pm - 4pm",
+        "instructorName": "Emily Johnson",
+        "numStudents": 15,
+        "ratings": 3.5,
+        "availableSeats": 0,
+        "price": 70
+    },
+    {
+        "classId": 200010,
+        "className": "Keyboard",
+        "classImage": "https://img.freepik.com/free-photo/father-daughter-playing-piano_23-2148101835.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=ais",
+        "time": "11am - 12pm",
+        "instructorName": "Emily Johnson",
+        "numStudents": 10,
+        "ratings": 3.9,
+        "availableSeats": 12,
+        "price": 60
+    }
+]
