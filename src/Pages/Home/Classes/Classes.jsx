@@ -21,7 +21,7 @@ const Classes = () => {
 
                     {
                         classes.map(classList =>
-                            <div key={classList.classId}>
+                            <div key={classList._id}>
                                 <h1 className="text-[#18adc0] pl-4 py-3 text-2xl font-bold">Course of {classList.classNam}</h1>
                                 <div className={classList.availableSeats !== 0 ?
                                     "card card-side bg-base-100 shadow-2xl" : "card card-side bg-red-500 shadow-2xl"}>

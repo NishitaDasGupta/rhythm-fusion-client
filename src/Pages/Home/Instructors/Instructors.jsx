@@ -21,7 +21,7 @@ const Instructors = () => {
 
                     {
                         instructors.map(teacher =>
-                            <div key={teacher.instructorId}>
+                            <div key={teacher._id}>
 
                                 <div
                                     className="card card-side bg-base-100 shadow-2xl">

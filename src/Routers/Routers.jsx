@@ -8,6 +8,7 @@ import Classes from "../Pages/Home/Classes/Classes";
 import Login from "../Pages/SigninUp/Login";
 import Register from "../Pages/SigninUp/Register";
 import Errorpage from "../Layout/Errorpage";
+import Dashboard from "../Layout/Dashboard";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
 
 
         ]
+    },
+    {
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>
     },
     {
         path: "*",

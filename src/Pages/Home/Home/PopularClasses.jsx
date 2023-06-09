@@ -41,7 +41,7 @@ const PopularClasses = () => {
                 className="mySwiper"
             >    {
                     classes.slice(0, 6).map((classList) =>
-                        <SwiperSlide key={classList.classId}>
+                        <SwiperSlide key={classList._id}>
                             <div className="card card-compact bg-base-100 hover:bg-[#a5eff9] shadow-xl">
                                 <figure><img src={classList.classImage} className="h-[190px] mt-5" alt="Class" /></figure>
                                 <div className="card-body">

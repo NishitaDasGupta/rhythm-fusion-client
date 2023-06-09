@@ -14,7 +14,7 @@ const PopularInstructors = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-7 mt-14">
                 {
                     instructors.map(teacher =>
-                        <div key={teacher.instructorId}>
+                        <div key={teacher._id}>
                             <div className="card w-96 bg-base-100 shadow-xl">
                                 <div className="card-body">
                                     <div className="flex"><div className="avatar">
