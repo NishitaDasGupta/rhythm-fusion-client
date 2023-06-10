@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
+import useAxiosSecure from "./useAxiosSecure";
 
 const useInstructors = () => {
+    const axiosSecure = useAxiosSecure();
     const [instructors, setInstructors] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/instructors')
-            .then(res => res.json())
-            .then(data => {
-                setInstructors(data);
-            })
+        axiosSecure.get('/instructors')
+            .then(data => { setInstructors(data.data); })
+            .catch(error => { console.log(error); })
+
     }, [])
     return [instructors];
 };

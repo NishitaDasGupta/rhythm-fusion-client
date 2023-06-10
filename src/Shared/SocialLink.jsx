@@ -2,16 +2,22 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import google from "../assets/ggg.png"
 import {useNavigate } from "react-router-dom";
+import useAxiosSecure from "../hook/useAxiosSecure";
 const SocialLink = () => {
+    const axiosSecure = useAxiosSecure();
     const { googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const handleGoogle = () => {
         googleSignIn()
             .then((result) => {
                 const user = result.user;
+                const userDetails = { name:user.displayName, email:user.email, role: "student" };
+                axiosSecure.post('/users', userDetails)
+                    .then(data => { console.log(data); })
+                    .catch(error => { console.log(error); })
                 navigate('/');
             })
-            .catch((error) => {
+            .catch((error) => {console.log(error);
             })
     }
     return (

@@ -5,11 +5,12 @@ import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
-import { updateProfile } from "firebase/auth";
+import useAxiosSecure from "../../hook/useAxiosSecure";
 const Register = () => {
+    const axiosSecure = useAxiosSecure();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
-    const { createUser, logOut } = useContext(AuthContext);
+    const { createUser, logOut, updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState("");
     const onSubmit = data => {
         const { name, photoURL, email, password, confirmPassword } = data;
@@ -17,14 +18,20 @@ const Register = () => {
             createUser(email, password)
                 .then((result) => {
                     const user = result.user;
-                    updateProfile(result.user, {
-                        displayName: name, photoURL: photoURL
-                    })
-                        .then(() => { setError(""); })
+                    updateUserProfile(name, photoURL)
+                        .then(() => {
+                            const userDetails = { name:name, email:email, role: "student" };
+                            axiosSecure.post('/users', userDetails)
+                                .then(data => { console.log("User handle role", data.data); })
+                                .catch(error => { console.log(error); })
+                            setError("");
+                        })
                         .catch((error) => {
                             setError(error.message)
                         });
                     setError("");
+
+
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
@@ -118,7 +125,7 @@ const Register = () => {
                                 error && <small className="text-red-600">{error}</small>
                             }
                             <div className="form-control  mt-6">
-                                <input  className="btn mx-auto w-[296px] bg-[#1ed8f0] hover:bg-[#1bc2d8]" type="submit" value="Signup" />
+                                <input className="btn mx-auto w-[296px] bg-[#1ed8f0] hover:bg-[#1bc2d8]" type="submit" value="Signup" />
                             </div>
                         </form>
                         <SocialLink></SocialLink>

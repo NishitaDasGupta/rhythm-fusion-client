@@ -2,7 +2,7 @@ import useClasses from "../../../hook/useClasses";
 import musicImg from "../../../assets/loggedin.jpg"
 const Classes = () => {
     const [classes] = useClasses();
-    console.log(classes);
+  
     return (
 
 
