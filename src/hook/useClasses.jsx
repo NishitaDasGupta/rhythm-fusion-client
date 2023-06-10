@@ -6,7 +6,7 @@ const useClasses = () => {
     const axiosSecure = useAxiosSecure();
     const [classes, setClasses] = useState([]);
     useEffect(() => {
-        axiosSecure.get('/classes')
+        axiosSecure.get('/allclasses')
             .then(data => { setClasses(data.data); })
             .catch (error=> {  console.log(error); })
     }, [])

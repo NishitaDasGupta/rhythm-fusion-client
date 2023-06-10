@@ -1,19 +1,43 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { useForm } from "react-hook-form";
+import useAxiosSecure from "../../../hook/useAxiosSecure";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const AddAClass = () => {
     const { user } = useContext(AuthContext);
+    const axiosSecure = useAxiosSecure();
+    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
+
         const { availableSeats, classImage, classNam, price, status } = data;
-        console.log(data);
+
+        const classData = { availableSeats: parseInt(availableSeats), classImage, classNam, price: parseInt(price), status, instructorName: user.displayName, numStudents: 0, email: user.email,feedback:"" }
+        
+        axiosSecure.post('/addclass', classData)
+            .then(data => {
+                data?.data?.insertedId &&
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Class Added',
+                        showConfirmButton: false,
+                        timer: 1000
+                    });
+                navigate('/dashboard/myclasses');
+
+            })
+            .catch(error => console.log(error));
+
+
     };
     return (
         <div>
             <div className="flex justify-end mt-3">
                 <div className="
-         bg-[#e9fbfe] border rounded-xl py-2 px-3 
+         bg-[#e9fbfe] border rounded-xl py-2 px-3 shadow-2xl
             ">
                     <div>
                         <h2 className="text-[#1ed8f0] text-lg font-bold py-2">Instructor</h2>
@@ -21,8 +45,8 @@ const AddAClass = () => {
                             <div className="flex justify-center items-center">
                                 <img className="w-12 mr-4 rounded-md" src={user?.photoURL} alt="" />
                                 <div>
-                                    <h3>{user?.displayName}</h3>
-                                    <h3>{user?.email}</h3>
+                                    <h3 className="font-semibold">{user?.displayName}</h3>
+                                    <h3 className="text-gray-500">{user?.email}</h3>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +110,7 @@ const AddAClass = () => {
                     </div>
 
                     <div className="form-control mt-6">
-                        <input className="btn bg-[#1ed8f0] hover:bg-[#1bc2d8] w-1/3 mx-auto " type="submit" value="Add a Class" />
+                        <input className="btn bg-[#1ed8f0] hover:bg-[#1bc2d8] w-1/3 mx-auto " type="submit" value="Add" />
                     </div>
 
                 </form>
