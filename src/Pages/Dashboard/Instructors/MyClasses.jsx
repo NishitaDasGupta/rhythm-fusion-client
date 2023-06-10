@@ -1,19 +1,24 @@
 import { AiFillEdit } from 'react-icons/ai';
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import useAxiosSecure from "../../../hook/useAxiosSecure";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const MyClasses = () => {
     const axiosSecure = useAxiosSecure();
     const { user } = useContext(AuthContext);
     const [myClassList, setMyClassList] = useState([]);
 
+ useEffect(()=> {
     axiosSecure.get(`/myclass?email=${user?.email}`)
-        .then(data => setMyClassList(data.data))
+    .then(data => setMyClassList(data.data))
+    .catch(error => {
+        console.log(error);
+    })
+ },[])
 
-       
     return (
         <div>
             <h1 className="text-3xl font-bold my-8 mx-5 ">List of my classes</h1>
@@ -35,10 +40,10 @@ const MyClasses = () => {
                         {myClassList.map(myClass =>
 
                             <tr key={myClass._id}>
-                               <Link>
-                               <th className='text-xl py-3 px-3'>
-                                    <AiFillEdit />
-                                </th></Link>
+                                <Link to={`/dashboard/updateclass/${myClass._id}`}>
+                                    <p className='text-xl py-3 px-3'>
+                                        <AiFillEdit />
+                                    </p></Link>
                                 <td>
                                     <div className="flex items-center space-x-3">
                                         <div className="avatar">
@@ -57,7 +62,7 @@ const MyClasses = () => {
                                 </td>
                                 <td className="text-center">{myClass?.availableSeats}</td>
                                 <td>{myClass?.status}</td>
-                                {myClass?.feedback === "" ?
+                                {myClass?.status === "Approved" || myClass?.status === "Pending"?
                                     <td>No Feedback</td>
                                     :
                                     <td>{myClass?.feedback}</td>}

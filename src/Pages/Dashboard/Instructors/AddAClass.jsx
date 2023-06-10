@@ -74,7 +74,7 @@ const AddAClass = () => {
                             </label>
                             <input {...register("status", { required: true })} type="text" value="Pending" className="input input-bordered w-full max-w-xs" />
                         </div>
-                        {errors.classNam && <span>Class Name is required</span>}
+                     
 
 
                     </div>
