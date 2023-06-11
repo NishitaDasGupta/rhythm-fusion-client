@@ -17,6 +17,7 @@ import MyEnrolledClasses from "../Pages/Dashboard/Students/MyEnrolledClasses";
 import MySelectedClasses from "../Pages/Dashboard/Students/MySelectedClasses";
 import PrivateRoute from "./PrivateRoute";
 import ClassUpdate from "../Pages/Dashboard/Instructors/ClassUpdate";
+import FeedbackUpdate from "../Pages/Dashboard/Admins/FeedbackUpdate";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -70,7 +71,12 @@ const router = createBrowserRouter([
             {
                 path: "updateclass/:id",
                 element: <ClassUpdate></ClassUpdate>,
-                loader: ({params}) => fetch(`http://localhost:5000/findmyoneclass/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/findmyoneclass/${params.id}`)
+            },
+            {
+                path: "updatefeedback/:id",
+                element: <FeedbackUpdate></FeedbackUpdate>,
+                loader: ({ params }) => fetch(`http://localhost:5000/findmyoneclass/${params.id}`)
             },
             {
                 path: "myenrolledclasses",

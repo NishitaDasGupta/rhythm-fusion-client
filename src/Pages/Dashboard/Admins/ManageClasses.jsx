@@ -1,11 +1,13 @@
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hook/useAxiosSecure";
 import useClasses from "../../../hook/useClasses";
+import { Link } from "react-router-dom";
 
 const ManageClasses = () => {
   const axiosSecure = useAxiosSecure();
   const [classes, refetch] = useClasses();
-  console.log(classes);
+
+  // console.log(classes);
   const handleStatus = (clas, statusValue) => {
     console.log(statusValue);
     const newUpdate = { status: statusValue };
@@ -66,7 +68,12 @@ const ManageClasses = () => {
                         <button onClick={() => { handleStatus(clas, "Denied") }} className="btn  bg-[#1ed8f0] hover:bg-[#1bc2d8] ">Deny</button>
                       </>
                   }
-                  <button className=" btn bg-[#1ed8f0] hover:bg-[#1bc2d8] ">Send Feedback</button>
+
+                  <Link to={`/dashboard/updatefeedback/${clas._id}`}>
+                    <button
+                      className="btn bg-[#1ed8f0] hover:bg-[#1bc2d8] " > SEND FEEDBACK </button>
+                  </Link>
+
                 </div>
               </div>
             </div>
