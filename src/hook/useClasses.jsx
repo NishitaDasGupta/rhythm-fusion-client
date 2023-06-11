@@ -7,8 +7,11 @@ const useClasses = () => {
     const [classes, setClasses] = useState([]);
     useEffect(() => {
         axiosSecure.get('/allclasses')
-            .then(data => { setClasses(data.data); })
-            .catch (error=> {  console.log(error); })
+            .then(data => {
+                setClasses(data.data);
+            
+            })
+            .catch(error => { console.log(error); })
     }, [])
     return [classes];
 };
