@@ -24,7 +24,7 @@ const useInstructors = () => {
         queryKey: ['instructors'],
         queryFn: async () => {
             const response = await axiosSecure.get('/instructors');
-            console.log(response);
+            // console.log(response);
             return response.data;
         },
     })
