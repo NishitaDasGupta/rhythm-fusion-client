@@ -20,7 +20,7 @@ import useAxiosSecure from "./useAxiosSecure";
 
 const useInstructors = () => {
     const axiosSecure = useAxiosSecure();
-    const { isLoading, refetch, isError, data: instructors = [], error } = useQuery({
+    const { isLoading, refetch, data: instructors = [] } = useQuery({
         queryKey: ['instructors'],
         queryFn: async () => {
             const response = await axiosSecure.get('/instructors');

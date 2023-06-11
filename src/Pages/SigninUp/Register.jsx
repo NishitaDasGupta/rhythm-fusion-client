@@ -20,7 +20,7 @@ const Register = () => {
                     const user = result.user;
                     updateUserProfile(name, photoURL)
                         .then(() => {
-                            const userDetails = { name:name, email:email, role: "student" };
+                            const userDetails = { name:name, email:email, role: "Student" };
                             axiosSecure.post('/users', userDetails)
                                 .then(data => { console.log("User handle role", data.data); })
                                 .catch(error => { console.log(error); })

@@ -7,8 +7,8 @@ import { AiFillSchedule, AiFillFolderAdd } from 'react-icons/ai';
 import { BsFileEarmarkPersonFill } from 'react-icons/bs';
 
 const Dashboard = () => {
-  const isAdmin = true;
-  const isStudent = false;
+  const isAdmin = false;
+  const isStudent = true;
   const isInstructor = false;
   return (
     <div className="drawer lg:drawer-open">

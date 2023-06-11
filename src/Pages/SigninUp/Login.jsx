@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLink from "../../Shared/SocialLink";
 
 import { useForm } from "react-hook-form";
@@ -12,6 +12,9 @@ import Swal from "sweetalert2";
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
+    const from = location?.state?.from?.pathname || "/";
     const [showPass, setShowPass] = useState(true);
     const { loginUser } = useContext(AuthContext);
     const [error, setError] = useState("");
@@ -28,8 +31,8 @@ const Login = () => {
                     title: 'Login Successfully!!',
                     showConfirmButton: false,
                     timer: 1500
-                  })
-                  navigate('/')
+                })
+                navigate(from);
             })
             .catch(error => setError(error.message))
     }

@@ -32,8 +32,9 @@ const ClassUpdate = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="form-control w-full max-w-xs">
+            <h1 className="text-3xl text-center font-bold my-10">Update Your Class </h1>
+            <form className="mx-5" onSubmit={handleSubmit(onSubmit)}>
+                <div className="form-control w-full max-w-xs ">
                     <label className="label">
                         <span className="label-text">Class Name:</span>
                     </label>

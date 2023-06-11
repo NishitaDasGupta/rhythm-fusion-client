@@ -1,8 +1,58 @@
 import useClasses from "../../../hook/useClasses";
 import musicImg from "../../../assets/loggedin.jpg"
+import { useLocation, useNavigate } from "react-router-dom";
+import useAxiosSecure from "../../../hook/useAxiosSecure";
+import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
+
 const Classes = () => {
     const [classes] = useClasses();
-  
+    const { user } = useContext(AuthContext);
+    const axiosSecure = useAxiosSecure();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const handleSelect = (classList) => {
+        if (!user?.email) {
+            Swal.fire({
+                title: 'Before select a course you have to login!!',
+                text: "",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Go to Login!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login', { replace: true, state: { from: location } });
+                }
+            })
+
+        }
+        else {
+            const classID = classList._id;
+            delete classList._id;
+            console.log("classID is", classID);
+            console.log("class list after delete is", classList);
+            const selectedCart = { ...classList, classID, studentEmail: user?.email, payment: "" }
+            axiosSecure.post('/selectcart', selectedCart)
+                .then((data) => {
+                    if (data.data.insertedId) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'The course is booked!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        navigate('/dashboard/myselectedclasses');
+                    }
+                })
+                .catch((error) => { console.log(error) })
+        }
+    }
+
+
     return (
 
 
@@ -39,7 +89,7 @@ const Classes = () => {
                                         <div className="card-actions justify-end">
                                             {classList.availableSeats !== 0
                                                 ?
-                                                <button disabled={false} className="btn  bg-[#1ed8f0] hover:bg-[#1bc2d8]   
+                                                <button onClick={() => handleSelect(classList)} disabled={false} className="btn  bg-[#1ed8f0] hover:bg-[#1bc2d8]   
                                             ">Select</button>
                                                 :
                                                 <button disabled={true} className="btn">Select</button>
