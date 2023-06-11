@@ -7,3 +7,16 @@
         font-family: 'Ubuntu', sans-serif;
     }
 }
+
+.light-theme{
+    background-color: rgb(252, 253, 255);
+  }
+
+.dark-theme{
+    background-color: rgb(15, 108, 120);
+    color: white;
+}
+
+.dark-theme h2,p,small{
+color: rgb(31, 40, 40);
+}

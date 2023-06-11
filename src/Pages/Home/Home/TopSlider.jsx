@@ -40,7 +40,7 @@ const TopSlider = () => {
                         <div className="hero-content text-neutral-content">
                             <div className="max-w-lg">
                                 <h1 className="mb-5 text-lg lg:text-4xl font-bold">{slide.courseTitle}</h1>
-                                <p className="mb-5 text-justify"> {slide.courseDetails}</p>
+                                <h5 className="mb-5 text-justify"> {slide.courseDetails}</h5>
                                 <Link to='/register'><button className="btn  bg-[#1ed8f0] hover:bg-[#1bc2d8] mr-5">Sign Up</button></Link>
                                 <button className="btn  bg-[#a5eff9] hover:bg-[#78e8f6]">Learn More</button>
                             </div>

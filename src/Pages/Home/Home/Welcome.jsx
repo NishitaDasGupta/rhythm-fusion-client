@@ -15,8 +15,8 @@ const Welcome = () => {
         <div className="my-48">
             <div>
                 <h1 className="my-5 text-center text-5xl font-bold">Welcome to <span className="text-[#18adc0]">Rhythm Fusion</span></h1>
-                <p className="mb-5 mx-auto text-center lg:w-3/5">Rhythm Fusion Music Instrument School is a renowned educational institution specializing in teaching the art of rhythmic music and instrumental skills.
-                </p>
+                <h5 className="mb-5 mx-auto text-center lg:w-3/5">Rhythm Fusion Music Instrument School is a renowned educational institution specializing in teaching the art of rhythmic music and instrumental skills.
+                </h5>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
             <div data-aos="flip-left"

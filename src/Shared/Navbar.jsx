@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/music.png"
 import { BsPersonCircle } from 'react-icons/bs';
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { FaToggleOff,FaToggleOn } from 'react-icons/fa';
+
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [theme, setTheme] = useState('light-theme');
     const navbarItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/instructors'>Instructors</Link></li>
@@ -12,12 +15,23 @@ const Navbar = () => {
         {
             user?.email && <li><Link to='/dashboard'>Dashboard</Link></li>
         }
+        
     </>
     const handleLogOut = () => {
         logOut()
             .then(() => { })
             .catch(() => { })
     }
+
+
+    const handleTheme = () => {
+        theme === "light-theme" ? setTheme("dark-theme") : setTheme("light-theme");
+    }
+
+    useEffect(() => {
+       document.body.className = theme;
+       
+    }, [theme])
     return (
         <div className="navbar">
             <div className="navbar-start z-30">
@@ -27,15 +41,20 @@ const Navbar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         {navbarItems}
+                        <button onClick={handleTheme}  className="btn bg-transparent border-0 text-2xl">{theme === "light-theme" ? <FaToggleOff/> : <FaToggleOn/>} </button>
                     </ul>
                 </div>
                 {/* Rhythm fusion  LOGO */}
                 <img className="w-7" src={logo} alt="" />
                 <h1 className="text-xl font-bold"><span className="text-3xl">R</span>hythm Fusion</h1>
+
+             
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    {navbarItems} </ul>
+                <ul className="menu flex justify-center items-center menu-horizontal px-1">
+                    {navbarItems} 
+                    <button onClick={handleTheme}  className="btn bg-transparent border-0 text-2xl">{theme === "light-theme" ? <FaToggleOff/> : <FaToggleOn/>} </button>
+                    </ul>
             </div>
             <div className="navbar-end">
                 {

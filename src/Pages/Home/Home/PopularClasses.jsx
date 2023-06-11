@@ -20,7 +20,7 @@ const PopularClasses = () => {
         <div className="my-48">
             <div className="mb-14" >
                 <h1 className="text-5xl font-bold my-5">Top <span className="text-[#18adc0]">Classes</span></h1>
-                <p className="lg:w-3/5 mb-5">The school offers a comprehensive curriculum that encompasses a wide range of musical instruments, including drums, percussion, keyboards, guitars, and bass. </p>
+                <h5 className="lg:w-3/5 mb-5">The school offers a comprehensive curriculum that encompasses a wide range of musical instruments, including drums, percussion, keyboards, guitars, and bass. </h5>
 
             </div>
             <Swiper

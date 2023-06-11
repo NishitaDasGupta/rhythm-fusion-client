@@ -10,7 +10,7 @@ const PopularInstructors = () => {
     return (
         <div className="my-48">
             <h1 className="text-5xl font-bold my-5">Our Popular <span className="text-[#18adc0]">Instructors</span></h1>
-            <p className="lg:w-3/5 mb-5">The school offers a comprehensive curriculum that encompasses a wide range of musical instruments, including drums, percussion, keyboards, guitars, and bass. </p>
+            <h5 className="lg:w-3/5 mb-5">The school offers a comprehensive curriculum that encompasses a wide range of musical instruments, including drums, percussion, keyboards, guitars, and bass. </h5>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-7 mt-14">
                 {
                     instructors.map(teacher =>
