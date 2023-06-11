@@ -4,7 +4,7 @@ import useClasses from "../../../hook/useClasses";
 
 const ManageClasses = () => {
   const axiosSecure = useAxiosSecure();
-  const [classes] = useClasses();
+  const [classes, refetch] = useClasses();
   console.log(classes);
   const handleStatus = (clas, statusValue) => {
     console.log(statusValue);
@@ -13,6 +13,7 @@ const ManageClasses = () => {
       .then(data => {
         // console.log(data.data);
         if (data.data.modifiedCount > 0) {
+          refetch();
           Swal.fire({
             position: 'center',
             icon: 'success',
