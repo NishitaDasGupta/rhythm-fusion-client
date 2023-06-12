@@ -17,7 +17,7 @@ const ManageUsers = () => {
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'Updated Successfully!!',
+                        title: `${registeredUser.name} is now ${roleValue}!`,
                         showConfirmButton: false,
                         timer: 1500
                     })

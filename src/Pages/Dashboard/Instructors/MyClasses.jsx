@@ -11,13 +11,13 @@ const MyClasses = () => {
     const { user } = useContext(AuthContext);
     const [myClassList, setMyClassList] = useState([]);
 
- useEffect(()=> {
-    axiosSecure.get(`/myclass?email=${user?.email}`)
-    .then(data => setMyClassList(data.data))
-    .catch(error => {
-        console.log(error);
-    })
- },[])
+    useEffect(() => {
+        axiosSecure.get(`/myclass?email=${user?.email}`)
+            .then(data => setMyClassList(data.data))
+            .catch(error => {
+                console.log(error);
+            })
+    }, [])
 
     return (
         <div>
@@ -62,7 +62,7 @@ const MyClasses = () => {
                                 </td>
                                 <td className="text-center">{myClass?.availableSeats}</td>
                                 <td>{myClass?.status}</td>
-                                {myClass?.status === "Approved" || myClass?.status === "Pending"?
+                                {myClass?.status === "Approved" || myClass?.status === "Pending" ?
                                     <td>No Feedback</td>
                                     :
                                     <td>{myClass?.feedback}</td>}

@@ -18,6 +18,9 @@ import MySelectedClasses from "../Pages/Dashboard/Students/MySelectedClasses";
 import PrivateRoute from "./PrivateRoute";
 import ClassUpdate from "../Pages/Dashboard/Instructors/ClassUpdate";
 import FeedbackUpdate from "../Pages/Dashboard/Admins/FeedbackUpdate";
+import AdminPrivate from "./AdminPrivate";
+import InstructorPrivate from "./InstructorPrivate";
+import StudentPrivate from "./StudentPrivate";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -54,37 +57,37 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "manageclasses",
-                element: <ManageClasses></ManageClasses>
+                element: <AdminPrivate><ManageClasses></ManageClasses></AdminPrivate>
             },
             {
                 path: "manageusers",
-                element: <ManageUsers></ManageUsers>
+                element: <AdminPrivate><ManageUsers></ManageUsers></AdminPrivate>
             },
             {
                 path: "addaclass",
-                element: <AddAClass></AddAClass>
+                element: <InstructorPrivate><AddAClass></AddAClass></InstructorPrivate>
             },
             {
                 path: "myclasses",
-                element: <MyClasses></MyClasses>
+                element: <InstructorPrivate><MyClasses></MyClasses></InstructorPrivate>
             },
             {
                 path: "updateclass/:id",
                 element: <ClassUpdate></ClassUpdate>,
-                loader: ({ params }) => fetch(`http://localhost:5000/findmyoneclass/${params.id}`)
+                loader: ({ params }) => fetch(`https://rhythm-fusion-server.vercel.app/findmyoneclass/${params.id}`)
             },
             {
                 path: "updatefeedback/:id",
                 element: <FeedbackUpdate></FeedbackUpdate>,
-                loader: ({ params }) => fetch(`http://localhost:5000/findmyoneclass/${params.id}`)
+                loader: ({ params }) => fetch(`https://rhythm-fusion-server.vercel.app/findmyoneclass/${params.id}`)
             },
             {
                 path: "myenrolledclasses",
-                element: <MyEnrolledClasses></MyEnrolledClasses>
+                element: <StudentPrivate><MyEnrolledClasses></MyEnrolledClasses></StudentPrivate>
             },
             {
                 path: "myselectedclasses",
-                element: <MySelectedClasses></MySelectedClasses>
+                element: <StudentPrivate><MySelectedClasses></MySelectedClasses></StudentPrivate>
             },
 
 

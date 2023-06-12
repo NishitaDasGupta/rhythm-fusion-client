@@ -7,7 +7,8 @@ const ManageClasses = () => {
   const axiosSecure = useAxiosSecure();
   const [classes, refetch] = useClasses();
 
-  // console.log(classes);
+  const pendingClasses = classes.filter(cls => cls.status === "Pending");
+  // console.log(pendingClass);
   const handleStatus = (clas, statusValue) => {
     console.log(statusValue);
     const newUpdate = { status: statusValue };
@@ -32,9 +33,9 @@ const ManageClasses = () => {
   }
   return (
     <div className="m-9">
-      <h1 className="text-4xl font-bold ">Total class: {classes.length}</h1>
+      <h1 className="text-4xl font-bold ">Pending Class List: {pendingClasses.length}</h1>
       {
-        classes.map(clas =>
+        pendingClasses.map(clas =>
           <div key={clas._id}>
 
             <div className="card lg:card-side bg-base-100 shadow-xl my-4 ">

@@ -8,6 +8,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Classes = () => {
     const [classes] = useClasses();
+    const ApprovedClasses = classes.filter(cls => cls.status === "Approved");
     const { user } = useContext(AuthContext);
     const axiosSecure = useAxiosSecure();
     const navigate = useNavigate();
@@ -70,7 +71,7 @@ const Classes = () => {
                 <div className="grid grid-cols-2 gap-6 my-14">
 
                     {
-                        classes.map(classList =>
+                        ApprovedClasses.map(classList =>
                             <div key={classList._id}>
                                 <h1 className="text-[#18adc0] pl-4 py-3 text-2xl font-bold">Course of {classList.classNam}</h1>
                                 <div className={classList.availableSeats !== 0 ?
@@ -87,8 +88,7 @@ const Classes = () => {
                                         {/* button disable or not */}
 
                                         <div className="card-actions justify-end">
-                                            {classList.availableSeats !== 0
-                                                ?
+                                            {(classList.availableSeats !== 0 && user?.role !== "Student") ?
                                                 <button onClick={() => handleSelect(classList)} disabled={false} className="btn  bg-[#1ed8f0] hover:bg-[#1bc2d8]   
                                             ">Select</button>
                                                 :

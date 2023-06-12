@@ -5,11 +5,14 @@ import { FaUsers, FaBookReader, FaHome } from 'react-icons/fa';
 import { MdLibraryMusic } from 'react-icons/md';
 import { AiFillSchedule, AiFillFolderAdd } from 'react-icons/ai';
 import { BsFileEarmarkPersonFill } from 'react-icons/bs';
+import useAdmin from "../hook/useAdmin";
+import useCheckInstructor from "../hook/useCheckInstructor";
+import useStudent from "../hook/useStudent";
 
 const Dashboard = () => {
-  const isAdmin = true;
-  const isStudent = false;
-  const isInstructor = false;
+  const [isAdmin] = useAdmin();
+  const [isStudent] = useStudent();
+  const [isInstructor] = useCheckInstructor();
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -33,13 +36,13 @@ const Dashboard = () => {
             isAdmin && <> <li><Link to='/dashboard/manageclasses'><SiGoogleclassroom />Manage Classes</Link></li>
               <li><Link to='/dashboard/manageusers'><FaUsers />Manage Users</Link></li></>
           }
-         {
-          isInstructor && <> <li><Link to='/dashboard/addaclass'><AiFillFolderAdd />Add A Class</Link></li>
-          <li><Link to='/dashboard/myclasses'><AiFillSchedule />My Classes</Link></li></>
-         }
-         {
-         isStudent && <> <li><Link to='/dashboard/myenrolledclasses'><FaBookReader />My Enrolled Classes</Link></li>
-          <li><Link to='/dashboard/myselectedclasses'><MdLibraryMusic />My Selected Classes</Link></li></>}
+          {
+            isInstructor && <> <li><Link to='/dashboard/addaclass'><AiFillFolderAdd />Add A Class</Link></li>
+              <li><Link to='/dashboard/myclasses'><AiFillSchedule />My Classes</Link></li></>
+          }
+          {
+            isStudent && <> <li><Link to='/dashboard/myenrolledclasses'><FaBookReader />My Enrolled Classes</Link></li>
+              <li><Link to='/dashboard/myselectedclasses'><MdLibraryMusic />My Selected Classes</Link></li></>}
 
           <div className="divider"></div>
           <li><Link to='/'><FaHome />Home</Link></li>
