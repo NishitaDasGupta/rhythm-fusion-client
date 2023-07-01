@@ -1,0 +1,40 @@
+[
+    {
+      "id":1,
+      "date": "15 Jul",
+      "title": "Fusion Rhythms Unleashed",
+      "location": "Main Auditorium",
+      "img": "https://img.freepik.com/free-photo/two-sound-engineers-working-together_107420-96156.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=ais",
+      "time": "7:00 PM - 8:30 PM"
+    },
+    { "id":2,
+      "date": "05 Aug",
+      "title": "Rhythmic Traditions of the World",
+      "location": "Guitar Studio B",
+      "img": "https://img.freepik.com/free-photo/electric-guitar-players-drummer-drum-set_155003-12014.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=ais",
+      "time": "10:00 AM - 2:00 PM"
+    },
+    { "id":3,
+      "date": "22 Oct",
+      "title": "Fusion Gala Concert",
+      "location": "Grand Theater",
+      "img": "https://img.freepik.com/free-photo/person-making-music-indoors_23-2148924286.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=ais",
+      "time": "6:30 PM - 8:00 PM"
+    },
+    {
+      "id": 4,
+      "date": "10 Nov",
+      "title": "Rhythm Techniques Workshop",
+      "location": "Piano Studio A",
+      "time": "4:00 PM - 6:00 PM",
+      "img": "https://img.freepik.com/free-photo/musician-band-jamming-together-art-workplace-with-instruments_155003-43047.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=ais"
+    },
+    {
+      "id": 5,
+      "date": "20 Nov",
+      "title": "Advanced Showcase Concert",
+      "location": "Main Auditorium",
+      "time": "7:30 PM - 9:00 PM",
+      "img": "https://img.freepik.com/free-photo/young-boy-playing-guitar_53876-146027.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=ais"
+    }
+  ]

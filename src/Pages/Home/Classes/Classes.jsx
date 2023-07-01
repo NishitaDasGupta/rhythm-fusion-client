@@ -5,9 +5,17 @@ import useAxiosSecure from "../../../hook/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import useStudent from "../../../hook/useStudent";
+import Typewriter from "react-ts-typewriter";
+import useAdmin from "../../../hook/useAdmin";
+import useCheckInstructor from "../../../hook/useCheckInstructor";
+
 
 const Classes = () => {
     const [classes] = useClasses();
+    const [isAdmin] = useAdmin();
+    const [isStudent] = useStudent();
+    const [isInstructor] = useCheckInstructor();
     const ApprovedClasses = classes.filter(cls => cls.status === "Approved");
     const { user } = useContext(AuthContext);
     const axiosSecure = useAxiosSecure();
@@ -33,8 +41,8 @@ const Classes = () => {
         else {
             const classID = classList._id;
             delete classList._id;
-            console.log("classID is", classID);
-            console.log("class list after delete is", classList);
+          //  console.log("classID is", classID);
+           // console.log("class list after delete is", classList);
             const selectedCart = { ...classList, classID, studentEmail: user?.email, payment: "" }
             axiosSecure.post('/selectcart', selectedCart)
                 .then((data) => {
@@ -62,7 +70,7 @@ const Classes = () => {
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
-                        <h1 className="text-5xl text-white font-bold ">Classes</h1>
+                        <h1 className="text-5xl text-white font-bold "><Typewriter cursor={false}text="Classes"/></h1>
                     </div>
                 </div>
             </div>
@@ -75,7 +83,7 @@ const Classes = () => {
                             <div key={classList._id}>
                                 <h1 className="text-[#18adc0] pl-4 py-3 text-2xl font-bold">Course of {classList.classNam}</h1>
                                 <div className={classList.availableSeats !== 0 ?
-                                    "card card-side bg-base-100 shadow-2xl" : "card card-side bg-red-400 shadow-2xl"}>
+                                    "card card-side bg-base-100 shadow-2xl" : "card card-side bg-red-200 border-2 border-red-600 shadow-2xl"}>
                                     <div>
 
                                         <figure><img className="w-[300px] h-[180px] pl-4 pt-3" src={classList.classImage} alt="Movie" /></figure>
@@ -83,16 +91,20 @@ const Classes = () => {
                                     <div className="card-body text-xs">
                                         <h2 className={`card-title text-base ${classList.availableSeats !== 0 ? "text-amber-600" : "text-white"}`}>Ins. {classList.instructorName}</h2>
                                         <p>Total Students: {classList.numStudents}</p>
-                                        <p>Available Seats: {classList.availableSeats}</p>
+                                       {
+                                        classList.availableSeats !== 0 ?  <p>Available Seats: {classList.availableSeats}</p> :
+                                        <p className="text-red-600 font-bold text-base">No Seats Available.</p>
+                                       }
                                         <p>Price: ${classList.price}.00</p>
                                         {/* button disable or not */}
 
                                         <div className="card-actions justify-end">
-                                            {(classList.availableSeats !== 0 && user?.role !== "Student") ?
-                                                <button onClick={() => handleSelect(classList)} disabled={false} className="btn  bg-[#1ed8f0] hover:bg-[#1bc2d8]   
-                                            ">Select</button>
+                                            {(classList.availableSeats ===0  || isAdmin || isInstructor) ?
+                                              <button disabled={true} className="btn">Select</button>
                                                 :
-                                                <button disabled={true} className="btn">Select</button>
+                                               
+                                                <button onClick={() => handleSelect(classList)} disabled={false} className="btn  bg-[#1ed8f0] hover:bg-[#1bc2d8]   
+                                                ">Select</button>
                                             }
 
 

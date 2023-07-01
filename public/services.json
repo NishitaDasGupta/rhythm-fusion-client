@@ -1,0 +1,45 @@
+[
+    
+      {
+        "service_id": 2,
+        "name": "Accommodation Facilities",
+        "image": "https://cdn-icons-png.flaticon.com/512/101/101876.png?w=740&t=st=1687774804~exp=1687775404~hmac=318d5fffd5c21ae928b26e7c13ea341873ae47460c42463bbfd456814129eb38"
+      },
+      {
+        "service_id": 3,
+        "name": "Performance Showcases",
+        "image": "https://img.freepik.com/free-icon/dancer-with-music_318-51048.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=ais"
+      },
+      {
+        "service_id": 4,
+        "name": "Creative Workshops",
+        "image": "https://cdn-icons-png.flaticon.com/512/4/4258.png?w=740&t=st=1687775125~exp=1687775725~hmac=aae8b48b4aac8e685894f4d3e0f9b0c430949f1a81ecb64501aabd0d798782b8"
+      },
+      {
+        "service_id": 5,
+        "name": "Guest Artist Sessions",
+        "image": "https://img.freepik.com/free-icon/musician_318-105614.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=ais"
+      },
+      {
+        "service_id": 6,
+        "name": "Adventure Excursions",
+        "image": "https://cdn-icons-png.flaticon.com/512/431/431238.png?w=740&t=st=1687775071~exp=1687775671~hmac=ac42d42a0b58724217d2f39a0fa3deda2f6f54581d994a2dd6a02f41aab0b98d"
+      },
+      {
+        "service_id": 7,
+        "name": "Team-Building Events",
+        "image": "https://cdn-icons-png.flaticon.com/512/1189/1189175.png?w=740&t=st=1687775453~exp=1687776053~hmac=82218ac951cdfa6129e92f5ef3032c1e1671a4251b6e7684b4d98d0037be5f23"
+      },
+      {
+        "service_id": 1,
+        "name": "Meals Provided",
+        "image": "https://img.freepik.com/free-icon/cutlery-cross-couple-fork-spoon_318-60954.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.1.1614607020.1683036746&semt=ais"
+      },
+      {
+        "service_id": 8,
+        "name": "Recording Studio Access",
+        "image": "https://img.freepik.com/free-icon/microphone-voice-recording_318-38518.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.1.1614607020.1683036746&semt=ais"
+      }
+    ]
+  
+  

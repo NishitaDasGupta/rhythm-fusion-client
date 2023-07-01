@@ -10,7 +10,7 @@ const ManageClasses = () => {
   const pendingClasses = classes.filter(cls => cls.status === "Pending");
   // console.log(pendingClass);
   const handleStatus = (clas, statusValue) => {
-    console.log(statusValue);
+   // console.log(statusValue);
     const newUpdate = { status: statusValue };
     axiosSecure.put(`/updateclass/${clas._id}`, newUpdate)
       .then(data => {

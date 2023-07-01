@@ -1,0 +1,26 @@
+[
+  {
+    "count_id": 1,
+    "name": "Teachers",
+    "image": "https://cdn-icons-png.flaticon.com/512/46/46652.png?w=740&t=st=1687779506~exp=1687780106~hmac=56fa2d54d7e8f3f9d4d03fdef86f511c7acfd7aa87d52fff3c4ef1217d5b3aa8",
+    "number": 24
+  },
+  {
+    "count_id": 2,
+    "name": "Students",
+    "image": "https://img.freepik.com/free-icon/student-with-graduation-cap_318-72825.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.1.1614607020.1683036746&semt=ais",
+    "number": 165
+  },
+  {
+    "count_id": 3,
+    "name": "Teaching Hours",
+    "image": "https://img.freepik.com/free-icon/clock-circular-outline_318-53898.jpg?size=626&ext=jpg&uid=R103354572&ga=GA1.2.1614607020.1683036746&semt=ais",
+    "number": 160
+  },
+  {
+    "count_id": 4,
+    "name": "Workshops",
+    "image": "https://cdn-icons-png.flaticon.com/512/46/46789.png?w=740&t=st=1687779588~exp=1687780188~hmac=cb5114629d909b9c9b2b7833bfacb3ec49b2633fc0571b42aa462a882a32c760",
+    "number": 8
+  }
+]

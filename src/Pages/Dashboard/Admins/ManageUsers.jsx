@@ -7,7 +7,7 @@ const ManageUsers = () => {
     const axiosSecure = useAxiosSecure();
     const [registeredUsers, refetch] = useUsers();
     const handleRole = (registeredUser, roleValue) => {
-        console.log(registeredUser,roleValue);
+     //   console.log(registeredUser,roleValue);
         const newRole = { role: roleValue };
         axiosSecure.put(`/updateuser/${registeredUser._id}`, newRole)
             .then(data => {

@@ -8,6 +8,7 @@ import { BsFileEarmarkPersonFill } from 'react-icons/bs';
 import useAdmin from "../hook/useAdmin";
 import useCheckInstructor from "../hook/useCheckInstructor";
 import useStudent from "../hook/useStudent";
+import Typewriter from "react-ts-typewriter";
 
 const Dashboard = () => {
   const [isAdmin] = useAdmin();
@@ -28,7 +29,8 @@ const Dashboard = () => {
           {/* Rhythm fusion  LOGO */}
           <div className="flex justify-center items-center">
             <img className="w-7" src={logo} alt="" />
-            <h1 className="text-xl font-bold"><span className="text-3xl"> R</span>hythm Fusion</h1>
+            <h1 className="text-xl font-bold"><span className="text-3xl">R</span><Typewriter cursor={false} text=" hythm Fusion"/></h1>
+            
           </div>
           <div className="divider"></div>
           {/* Sidebar content here */}

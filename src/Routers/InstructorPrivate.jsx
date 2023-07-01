@@ -18,10 +18,9 @@ const InstructorPrivate = ({children}) => {
     {
         return children;
     }
-    else
-    {
+  
        return <Navigate to="/login" replace={true} state={{from:location}}></Navigate>
-    }
+   
   
 };
 

@@ -5,9 +5,11 @@ import { Autoplay, Pagination, FreeMode } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
 import '@smastrom/react-rating/style.css'
 import useClasses from '../../../hook/useClasses';
+import {   Slide } from 'react-awesome-reveal';
+
+// import { IoPeople } from 'react-icons/io5';
 
 const PopularClasses = () => {
     const [classes] = useClasses();
@@ -19,8 +21,13 @@ const PopularClasses = () => {
     return (
         <div className="my-48">
             <div className="mb-14" >
-                <h1 className="text-5xl font-bold my-5">Top <span className="text-[#18adc0]">Classes</span></h1>
+              
+            <Slide triggerOnce>
+
+            <h1 className="text-5xl font-bold my-5">Top <span className="text-[#18adc0]">Classes</span></h1>
                 <h5 className="lg:w-3/5 mb-5">The school offers a comprehensive curriculum that encompasses a wide range of musical instruments, including drums, percussion, keyboards, guitars, and bass. </h5>
+            </Slide>
+               
 
             </div>
             <Swiper

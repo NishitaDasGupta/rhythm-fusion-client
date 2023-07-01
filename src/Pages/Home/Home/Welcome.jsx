@@ -5,23 +5,27 @@ import { GiTeacher } from 'react-icons/gi';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-
+import { Bounce} from "react-awesome-reveal";
 const Welcome = () => {
     useEffect(() => {
         AOS.init();
         AOS.refresh();
-      }, [])
+    }, [])
     return (
         <div className="my-48">
             <div>
-                <h1 className="my-5 text-center text-5xl font-bold">Welcome to <span className="text-[#18adc0]">Rhythm Fusion</span></h1>
+                <Bounce><h1 className="my-5 text-center text-5xl font-bold">Welcome to <span className="text-[#18adc0]">Rhythm Fusion</span></h1></Bounce>
+               
                 <h5 className="mb-5 mx-auto text-center lg:w-3/5">Rhythm Fusion Music Instrument School is a renowned educational institution specializing in teaching the art of rhythmic music and instrumental skills.
                 </h5>
+               
+                
+
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-            <div data-aos="flip-left"
-     data-aos-easing="ease-out-cubic"
-     data-aos-duration="2000" className="card w-64 bg-base-100 shadow-xl">
+                <div data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000" className="card w-64 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
 
                         <div className='text-5xl text-[#1ed8f0]'>
@@ -33,10 +37,10 @@ const Welcome = () => {
                         <p>Exceptional faculty comprising world-class musicians.</p>
                     </div>
                 </div>
-                
+
                 <div data-aos="flip-left"
-     data-aos-easing="ease-out-cubic"
-     data-aos-duration="2000"   className="card w-64 bg-base-100 shadow-xl">
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000" className="card w-64 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
 
                         <div className='text-5xl text-yellow-600'>
@@ -48,8 +52,8 @@ const Welcome = () => {
                     </div>
                 </div>
                 <div data-aos="flip-left"
-     data-aos-easing="ease-out-cubic"
-     data-aos-duration="2000" className="card w-64 bg-base-100 shadow-xl">
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000" className="card w-64 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
                         <div className='text-5xl text-[#1ed8f0]'> <BsBarChart /></div>
 
@@ -60,8 +64,8 @@ const Welcome = () => {
                     </div>
                 </div>
                 <div data-aos="flip-left"
-     data-aos-easing="ease-out-cubic"
-     data-aos-duration="2000" className="card w-64 bg-base-100 shadow-xl">
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000" className="card w-64 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
                         <div className='text-5xl text-yellow-600'>   <GiTeacher /></div>
 

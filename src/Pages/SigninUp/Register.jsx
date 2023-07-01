@@ -22,7 +22,7 @@ const Register = () => {
                         .then(() => {
                             const userDetails = { name:name, email:email, role: "Student" };
                             axiosSecure.post('/users', userDetails)
-                                .then(data => { console.log("User handle role", data.data); })
+                                .then(data => { })
                                 .catch(error => { console.log(error); })
                             setError("");
                         })

@@ -13,7 +13,7 @@ const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location);
+  //  console.log(location);
     const from = location?.state?.from?.pathname || "/";
     const [showPass, setShowPass] = useState(true);
     const { loginUser } = useContext(AuthContext);
@@ -23,7 +23,7 @@ const Login = () => {
         loginUser(email, password)
             .then((result) => {
                 const user = result.user;
-                console.log(user);
+               // console.log(user);
                 setError("");
                 Swal.fire({
                     position: 'center',

@@ -26,8 +26,10 @@
 ### Used Packages: 
 * react-rating
 * tanstack/react-query
-*  aos
+* aos
 * axios
+* react-awesome-reveal
+* react-typewriter
 * react-fast-marquee
 * react-hook-form
 * react-icons
